@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 10,
+                bottom: 20,
                 left: MediaQuery.of(context).size.width / 2 - 70,
                 right: MediaQuery.of(context).size.width / 2 - 70,
                 child: ElevatedButton(

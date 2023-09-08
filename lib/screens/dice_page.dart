@@ -34,21 +34,36 @@ class _DicePageState extends State<DicePage> {
                 end: Alignment.bottomRight,
                 stops: const [0.4, 0.9])),
         child: Stack(children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  children: [
-                    for (int i = 0; i < widget.diceAmount; i++)
-                      Dice(
-                        turns: turns,
-                      )
-                  ]),
-            ),
-          ),
+          widget.diceAmount == 1 || widget.diceAmount == 2
+              ? Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      for (int i = 0; i < widget.diceAmount; i++)
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Dice(
+                            turns: turns,
+                          ),
+                        ),
+                    ],
+                  ),
+                )
+              : Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: GridView.count(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        children: [
+                          for (int i = 0; i < widget.diceAmount; i++)
+                            Dice(
+                              turns: turns,
+                            )
+                        ]),
+                  ),
+                ),
           Positioned(
             bottom: 10,
             left: MediaQuery.of(context).size.width / 2 - 70,
