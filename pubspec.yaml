@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -28,3 +29,4 @@ flutter:
     - assets/images/dice_4.png
     - assets/images/dice_5.png
     - assets/images/dice_6.png
+    - assets/icons/launcher_icon.png

@@ -22,8 +22,7 @@ class Dice extends StatelessWidget {
       duration: duration,
       child: Image.asset(
         imagePaths[random.nextInt(6)],
-        height: MediaQuery.of(context).size.height * 0.4,
-        width: MediaQuery.of(context).size.width * 0.4,
+        color: Colors.white,
       ),
     );
   }
